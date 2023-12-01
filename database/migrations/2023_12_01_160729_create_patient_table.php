@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patient', function (Blueprint $table) {
+        Schema::create('patients', function (Blueprint $table) {
             $table->id();
+            $table->integer('age');
+            $table->integer('SystolicBP');
+            $table->integer('DiastolicBP');
+            $table->integer('Blood_sugar');
+            $table->integer('Body_temp');
+            $table->integer('heartrate');
+            $table->string('risk');
             $table->timestamps();
         });
     }
