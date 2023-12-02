@@ -26,7 +26,27 @@
 <body>
 
     <h2>Maternal Health Risk Data</h2>
-
+    <br><br>
+    <form id="filterForm">
+        <div class="mb-3">
+            <label for="genderFilter" class="form-label">Filter by Risk:</label>
+            <select class="form-select" id="genderFilter">
+                <option value="">High</option>
+                <option value="Male">Medium</option>
+                <option value="Female">Low</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="classFilter" class="form-label">Filter by Age:</label>
+            <select class="form-select" id="classFilter">
+                <option value="">20</option>
+                <option value="Positive">30</option>
+                <option value="Negative">40</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+    </form>
+    <br><br>
     <table>
       <tr>
         <th>Age</th>

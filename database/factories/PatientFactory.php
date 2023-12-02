@@ -18,12 +18,12 @@ class PatientFactory extends Factory
     {
         return [
             'age'=>$this->faker->randomDigit(3),
-            'SystolicBP'=>$this->faker->randomDigit(3),
-            'DiastolicBP'=>$this->faker->randomDigit(2),
-            'Blood_sugar'=>$this->faker->randomDigit(2),
-            'Body_temp'=>$this->faker->randomDigit(2),
-            'heartrate'=>$this->faker->randomDigit(3),
-            'risk'=>$this->faker->text(5),
+            'SystolicBP'=>$this->faker->randomDigit(5),
+            'DiastolicBP'=>$this->faker->randomDigit(5),
+            'Blood_sugar'=>$this->faker->randomDigit(5),
+            'Body_temp'=>$this->faker->randomDigit(3),
+            'heartrate'=>$this->faker->randomDigit(4),
+            'risk'=>$this->faker->text(10),
         ];
     }
 }
