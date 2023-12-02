@@ -13,12 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/data', function () {
     return view('patient');
 });
+
+Route::get('/data', 'App\Http\Controllers\PatientController@showdata');
 
 
