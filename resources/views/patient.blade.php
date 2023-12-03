@@ -27,6 +27,8 @@
 
     <h2>Maternal Health Risk Data</h2>
     <br><br>
+
+    {{-- Filter by risk --}}
     <form method="GET" action="{{ url('/data') }}">
         <div class="mb-3">
             <label for="risk" class="form-label">Filter by Risk:</label>
@@ -40,6 +42,22 @@
         </div>
         <button type="submit" class="btn btn-primary">Apply Filters</button>
     </form>
+<br>
+{{-- Filter by age --}}
+<form method="GET" action="{{ url('/data') }}">
+    <div class="mb-3">
+        <label for="age" class="form-label">Filter by Age:</label>
+        <select class="form-select" name="age" id="age">
+            @foreach ($ages as $age)
+                <option value="{{ $age->age }}" {{ $age->age == $selectedage ? 'selected' : '' }}>
+                    {{ $age->age }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Apply Filters</button>
+</form>
+
 
     <br><br>
     <table>
