@@ -29,7 +29,7 @@
     <br><br>
 
     {{-- Filter by risk --}}
-    <form method="GET" action="{{ url('/data') }}">
+    <form method="GET" action="{{ url('/') }}">
         <div class="mb-3">
             <label for="risk" class="form-label">Filter by Risk:</label>
             <select class="form-select" name="risk" id="risk">
@@ -42,45 +42,46 @@
         </div>
         <button type="submit" class="btn btn-primary">Apply Filters</button>
     </form>
-<br>
-{{-- Filter by age --}}
-<form method="GET" action="{{ url('/data') }}">
-    <div class="mb-3">
-        <label for="age" class="form-label">Filter by Age:</label>
-        <select class="form-select" name="age" id="age">
-            @foreach ($ages as $age)
-                <option value="{{ $age->age }}" {{ $age->age == $selectedage ? 'selected' : '' }}>
-                    {{ $age->age }}
-                </option>
-            @endforeach
-        </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Apply Filters</button>
-</form>
 
+    <br>
 
+    {{-- Filter by age --}}
+    <form method="GET" action="{{ url('/') }}">
+        <div class="mb-3">
+            <label for="age" class="form-label">Filter by Age:</label>
+            <select class="form-select" name="age" id="age">
+                @foreach ($ages as $age)
+                    <option value="{{ $age->age }}" {{ $age->age == $selectedage ? 'selected' : '' }}>
+                        {{ $age->age }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Apply Filters</button>
+    </form>
     <br><br>
+
     <table>
-      <tr>
-        <th>Age</th>
-        <th>Systolic BP</th>
-        <th>Diastolic BP</th>
-        <th>Blood Sugar</th>
-        <th>Body Temperature</th>
-        <th>Heart Rate</th>
-        <th>Risk</th>
-      </tr>
-      @foreach($MyData as $data)
-      <tr>
-        <td>{{$data['age']}}</td>
-        <td>{{$data['SystolicBP']}}</td>
-        <td>{{$data['DiastolicBP']}}</td>
-        <td>{{$data['Blood_sugar']}}</td>
-        <td>{{$data['Body_temp']}}</td>
-        <td>{{$data['heartrate']}}</td>
-        <td>{{$data['risk']}}</td>
-      </tr>
-      @endforeach
+        <tr>
+            <th>Age</th>
+            <th>Systolic BP</th>
+            <th>Diastolic BP</th>
+            <th>Blood Sugar</th>
+            <th>Body Temperature</th>
+            <th>Heart Rate</th>
+            <th>Risk</th>
+        </tr>
+        @foreach($myData as $data)
+            <tr>
+                <td>{{ $data->age }}</td>
+                <td>{{ $data->SystolicBP }}</td>
+                <td>{{ $data->DiastolicBP }}</td>
+                <td>{{ $data->Blood_sugar }}</td>
+                <td>{{ $data->Body_temp }}</td>
+                <td>{{ $data->heartrate }}</td>
+                <td>{{ $data->risk }}</td>
+            </tr>
+        @endforeach
     </table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
