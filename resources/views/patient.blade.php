@@ -41,6 +41,7 @@
             </select>
         </div>
 
+    {{-- Filter by age --}}
         <div class="mb-3">
             <label for="age" class="form-label">Filter by Age:</label>
             <select class="form-select" name="age" id="age">
