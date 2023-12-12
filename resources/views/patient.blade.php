@@ -40,25 +40,24 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Apply Filters</button>
-    </form>
 
-    <br>
-
-    {{-- Filter by age --}}
-    <form method="GET" action="{{ url('/') }}">
         <div class="mb-3">
             <label for="age" class="form-label">Filter by Age:</label>
             <select class="form-select" name="age" id="age">
                 @foreach ($ages as $age)
-                    <option value="{{ $age->age }}" {{ $age->age == $selectedage ? 'selected' : '' }}>
+                    <option value="{{ $age->age }}" {{ $age->age == $selectedAge ? 'selected' : '' }}>
                         {{ $age->age }}
                     </option>
                 @endforeach
             </select>
         </div>
+
         <button type="submit" class="btn btn-primary">Apply Filters</button>
     </form>
+
+
+
+
     <br><br>
 
     <table>
